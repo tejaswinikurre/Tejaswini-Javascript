@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<style type="text/css">
+		#login_form{
+			width: auto;
+  			display: grid;
+  			align-items: center;
+  			background-color: white;
+  			box-shadow: 0px 0px 1px 1px white;
+  			padding: 1%;
+  			margin-left: 20%;
+  			margin-right: 35%;
+  			margin-top: -2%;
+		}
+		.login-form-field{
+
+			width:98%;
+			height:30px;
+			}
+
+		#login-form-submit{
+			width:auto;
+			height:30px;
+			border-radius: 8px;
+		}
+		 hr{
+        height: 1px;
+        background-color:red;
+        border: none;
+    }
+    button{
+    	border-radius: 8px;
+    }
+    pre { 
+                font-family: Arial; 
+                color: #009900; 
+                margin: 25px; 
+            }
+    h2{
+    	background:#2F4CB3;
+    	text-align:center;
+    	color: white;
+    	box-shadow: 0px 0px 5px 2px black;
+    	margin-left: 20%;
+    	width: auto;
+  		height:40px;
+  		margin-top: 4%;
+  		margin-right: 35%;
+  	}
+		
+	</style>
+
+	<script type="text/javascript">
+		function fun()
+		{
+			
+
+			var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if(document.myform.Firstname.value=="")
+				alert("enter Firstname");
+			else if(document.myform.Lastname.value=="")
+				alert("Enter Lastname");
+			else if(document.myform.phone.value.length!=10)
+				alert("enter phone no: correctly");
+			else if(!filter.test(document.myform.EmailId.value))
+				alert("Enter valid email");
+
+			else if(document.myform.Password.value.length<=6)
+				alert("Password minimum length is greater than or equal to 6");
+			
+			else
+				alert("success");
+		}
+	</script>
+
+</head>
+<body bgcolor="lightgrey">
+	<div>
+	<h2 >Sign in</h2>
+	<div id="login_form"  >
+		
+		<form  name="myform" method="post">
+			<input type="text" name="Firstname" class="login-form-field" placeholder="First name"><br><br>
+			<input type="text" name="Lastname"  class="login-form-field" placeholder="Last name"><br><br>
+			<input type="text" name="phone"  class="login-form-field" placeholder="Phone number"><br><br>
+			 <input type="text" name="EmailId" class="login-form-field" placeholder="Username"><br><br>
+      		<input type="password" name="Password" class="login-form-field" placeholder="Password"><br><br><br>
+      		<input type="submit" value="SIGN IN" id="login-form-submit" onclick="fun()" style="background:#0C8EE0;color:white;border:none;width: 95%;">
+      		<pre><a href="#" >Forgot your password?</a>           <a href="#">Register!</a></pre>
+
+		</form>
+		<br>
+		<table style ="width: auto; "><tr >
+				<td style="width:47%"><hr></td>
+				<td style="vertical-align:middle; text-align: center">OR</td>
+				<td style="width:47%"><hr/></td>
+				</tr>
+		</table>
+		<br>
+		<button style="background:#2F4CB3;color:white;border:none;width:auto;height:30px">f</button>
+		<br>
+		<button style="background:red;color:white;border:none;width:auto;height:30px">g</button>
+		<br><br>
+		<button style="background:#E0C60C;color:white;border:none;mwidth:auto;height:30px">EPAM LOGIN</button>
+	</div>
+</div>
+
+</body>
+</html>
+
